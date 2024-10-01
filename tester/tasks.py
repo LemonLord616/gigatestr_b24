@@ -1,10 +1,10 @@
 import pathlib
 import typing
 
-from .checkers import *
-from .generators import *
-from .testers import TESTER_DICT
-from .checkers import ComparisonChecker
+from checkers import *
+from generators import *
+from testers import TESTER_DICT
+from checkers import ComparisonChecker
 
 if typing.TYPE_CHECKING:
     from .generators import AbsGenerator

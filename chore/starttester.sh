@@ -1,3 +1,3 @@
 #!/bin/bash
-cd /usr/gigatester
+cd /root/gigatester
 tester/venv/bin/python tester/main.py
