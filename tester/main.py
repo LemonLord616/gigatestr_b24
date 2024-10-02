@@ -14,6 +14,7 @@ from generators import AbsGenerator
 from tasks import Task, TASK_DICT
 from testers import AbsTester, TESTER_DICT
 
+#pomogite
 
 def generate(generator: AbsGenerator, n: int):
     try:
