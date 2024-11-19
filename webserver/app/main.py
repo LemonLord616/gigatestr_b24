@@ -22,10 +22,10 @@ LANGUAGE_NAMES = {
     'cs': 'C# 10',
 }
 TASKS = Literal[
-    'internal_task_id',
+    'java_ass3',
 ]
 TASK_NAMES = {
-    'internal_task_id': 'Visual Task Name',
+    'java_ass3': 'JAVAASS3',
 }
 
 VERSION_ID = "2"
@@ -46,9 +46,9 @@ results: dict[str, Result] = {}
 regs = defaultdict(int)
 ban_list: list[str] = []
 
-SECRET = os.environ['SECRET']
-MAX_QUEUE = int(os.environ['MAX_QUEUE'])
-MAX_REG = int(os.environ['MAX_REG'])
+SECRET = 'eb8d5498f143d53df55ce37fb3d944a3076f757b1268bfb4ce54959f3c2b5c1d'
+MAX_QUEUE = 350
+MAX_REG = 5
 
 app.mount('/static', StaticFiles(directory="static"), name="static")
 
@@ -164,4 +164,4 @@ async def internal(ws: WebSocket):
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=80)

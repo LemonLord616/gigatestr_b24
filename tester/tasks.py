@@ -7,7 +7,7 @@ from testers import TESTER_DICT
 from checkers import ComparisonChecker
 
 if typing.TYPE_CHECKING:
-    from .generators import AbsGenerator
+    from .generators import AbsGenerator, JavaAss3Generator
     from .testers import AbsTester
     from .checkers import AbsChecker
 
@@ -33,9 +33,10 @@ class Task:
 # Check commits <= 63e4ef836053d09d1256db2af1abb5a5084e66c7
 
 exampleTask = Task(ExampleGenerator(), ('example.cpp', TESTER_DICT['cpp17']), ComparisonChecker(), 100, 60)
+java_ass3 = Task(JavaAss3Generator(), ('SmartHomeManagementSystem.java', TESTER_DICT['java']), ComparisonChecker(), 100, 60)
 
 TASK_DICT: dict[str, Task] = {
-    'internal_task_id': exampleTask,
+    'java_ass3': java_ass3
 }
 
 __all__ = ['Task', 'TASK_DICT']

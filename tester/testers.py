@@ -41,7 +41,7 @@ class AbsTester(ABC):
 class JavaTester(AbsTester):
     def _test(self, n_tests: int, file_name: PathLike[str], timeout: int) -> list[str]:
         shutil.copyfile(self.local('chore', 'run_java.sh'), self.local('data', 'run_java.sh'))
-        shutil.copyfile(file_name, self.local('prog', 'Main.java'))
+        shutil.copyfile(file_name, self.local('prog', "SmartHomeManagementSystem.java"))
 
         try:
             d: Container = self.docker.containers.run(
@@ -49,7 +49,7 @@ class JavaTester(AbsTester):
                 detach=True, network_mode='none', working_dir='/work', stderr=True,
                 volumes=[f'{self.local("prog")}:/prog:ro',
                          f'{self.local("data")}:/data'],
-                command=f'/bin/bash /data/run_java.sh {n_tests} /prog/Main.java Main'
+                command=f'/bin/bash /data/run_java.sh {n_tests} /prog/SmartHomeManagementSystem.java SmartHomeManagementSystem'
             )
             t1 = time.time()
             while d.status != 'exited':
