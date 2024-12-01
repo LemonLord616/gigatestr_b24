@@ -4,11 +4,9 @@ from . import AbsGenerator
 
 def choose_device(seed):
     devices = ["Camera","Heater","Light"]
-    devices_cringe = ["randomcringe","-15","52","random52cringe","__"]
+    devices_cringe = ["randomcringe","-15","52","__"]
     if (seed < 3):
-        return devices_cringe[random.randint(0,4)]
-    if (6 <= seed <= 9):
-        return "cringe25"
+        return devices_cringe[random.randint(0,3)]
     return devices[random.randint(0,2)]
 
 def choose_command(seed):

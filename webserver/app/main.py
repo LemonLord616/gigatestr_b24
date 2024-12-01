@@ -22,10 +22,10 @@ LANGUAGE_NAMES = {
     'cs': 'C# 10',
 }
 TASKS = Literal[
-    'java_ass3',
+    'java_ass4',
 ]
 TASK_NAMES = {
-    'java_ass3': 'JAVAASS3',
+    'java_ass4': 'JAVAASS4',
 }
 
 VERSION_ID = "2"

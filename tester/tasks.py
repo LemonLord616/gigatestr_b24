@@ -7,7 +7,7 @@ from testers import TESTER_DICT
 from checkers import ComparisonChecker
 
 if typing.TYPE_CHECKING:
-    from .generators import AbsGenerator, JavaAss3Generator
+    from .generators import AbsGenerator, JavaAss3Generator, JavaAss4Generator
     from .testers import AbsTester
     from .checkers import AbsChecker
 
@@ -34,9 +34,10 @@ class Task:
 
 exampleTask = Task(ExampleGenerator(), ('example.cpp', TESTER_DICT['cpp17']), ComparisonChecker(), 100, 60)
 java_ass3 = Task(JavaAss3Generator(), ('SmartHomeManagementSystem.java', TESTER_DICT['java']), ComparisonChecker(), 100, 60)
+java_ass4 = Task(JavaAss4Generator(), ('Main.java', TESTER_DICT['java']), ComparisonChecker(), 100, 60)
 
 TASK_DICT: dict[str, Task] = {
-    'java_ass3': java_ass3
+    'java_ass4': java_ass4
 }
 
 __all__ = ['Task', 'TASK_DICT']
